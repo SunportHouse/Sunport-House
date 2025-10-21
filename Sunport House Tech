@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="site.title">阳港屋科技 | 数据处理与模型开发</title>
+  <meta name="description" data-i18n-meta="site.description" content="我们是一家专注于数据处理与模型开发的科技公司，提供数据清洗、预测建模与可视化服务。">
+  <meta name="theme-color" content="#0ea5e9">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" data-i18n-meta="site.title" content="阳港屋科技 | 数据处理与模型开发" />
+  <meta property="og:description" data-i18n-meta="site.description" content="我们是一家专注于数据处理与模型开发的科技公司，提供数据清洗、预测建模与可视化服务。" />
+  <meta property="og:image" content="/og.png" />
+  <style>
+    :root{--bg:#0b1220;--card:#121a2b;--text:#e6eefc;--muted:#9fb3d1;--accent:#0ea5e9;--ring:#38bdf8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans','Helvetica Neue',Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:linear-gradient(120deg,#0b1220,#0b1530);color:var(--text)}
+    a{color:var(--accent);text-decoration:none}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,18,32,.6);border-bottom:1px solid #1f2a44}
+    .wrap{max-width:1080px;margin:auto;padding:16px}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#0ea5e9);box-shadow:0 0 0 3px #0ea5e933}
+    .lang{display:flex;gap:8px}
+    .lang button{background:#10192b;border:1px solid #1f2a44;color:var(--text);padding:6px 10px;border-radius:10px;cursor:pointer}
+    .lang button.active{border-color:var(--ring);box-shadow:0 0 0 3px #38bdf833}
+    .hero{padding:72px 16px 40px}
+    .title{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.15;margin:0 0 10px}
+    .subtitle{color:var(--muted);font-size:clamp(14px,2vw,17px);margin:0 0 24px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#021422;padding:12px 16px;border:none;border-radius:12px;font-weight:700;cursor:pointer}
+    .btn.secondary{background:#10192b;color:var(--text);border:1px solid #1f2a44}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 4;background:var(--card);border:1px solid #1f2a44;border-radius:16px;padding:18px}
+    @media (max-width:900px){.card{grid-column:span 6}}
+    @media (max-width:640px){.card{grid-column:span 12}}
+    h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+    footer{border-top:1px solid #1f2a44;margin-top:40px}
+    .foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:22px 16px;color:var(--muted)}
+    .badge{display:inline-block;padding:4px 8px;border:1px solid #1f2a44;border-radius:999px;font-size:12px}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .kicker{letter-spacing:.2em;font-size:12px;color:#9fb3d1;text-transform:uppercase}
+    .pill{display:inline-block;background:#0ea5e922;border:1px solid #38bdf844;border-radius:999px;padding:4px 10px;margin-top:6px;color:#8cd6ff}
+    section{scroll-margin-top:80px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap row">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span data-i18n="site.brand">阳港屋科技</span>
+      </div>
+      <nav class="lang" aria-label="Language switcher">
+        <button id="btn-zh" class="active" data-lang="zh" aria-pressed="true">中</button>
+        <button id="btn-en" data-lang="en" aria-pressed="false">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker" data-i18n="hero.kicker">数据处理 · 模型开发 · 决策优化</div>
+      <h1 class="title" data-i18n="hero.title">把数据变成可执行的决策</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">我们提供从数据采集与清洗、特征工程、建模训练到可视化交付的一体化解决方案。</p>
+      <div class="cta">
+        <a class="btn" href="#services" data-i18n="hero.ctaPrimary">查看服务</a>
+        <a class="btn secondary" href="#contact" data-i18n="hero.ctaSecondary">联系我们</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="grid">
+        <article class="card">
+          <h3 data-i18n="svc.cleaning.title">数据清洗与管道</h3>
+          <p class="muted" data-i18n="svc.cleaning.desc">构建可靠的ETL流程，处理缺失值与异常值，构建高质量数据。</p>
+          <span class="pill" data-i18n="svc.cleaning.tag">Python · SQL · Airflow</span>
+        </article>
+        <article class="card">
+          <h3 data-i18n="svc.model.title">预测建模</h3>
+          <p class="muted" data-i18n="svc.model.desc">从经典统计到机器学习与深度学习，覆盖回归、分类、时间序列。</p>
+          <span class="pill" data-i18n="svc.model.tag">XGBoost · LSTM · Prophet</span>
+        </article>
+        <article class="card">
+          <h3 data-i18n="svc.viz.title">可视化与报表</h3>
+          <p class="muted" data-i18n="svc.viz.desc">自动化报告，助力业务方快速理解与决策。</p>
+          <span class="pill" data-i18n="svc.viz.tag">BI · Dashboards · API</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:28px">
+      <div class="card" style="grid-column:span 12">
+        <h3 data-i18n="about.title">关于我们</h3>
+        <p class="muted" data-i18n="about.body">我们来自统计背景，长期专注于数据工程与智能建模，致力于以工程化与科研化的方法，打造稳定可复用的模型。</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <div class="card" style="grid-column:span 12">
+        <h3 data-i18n="contact.title">联系与合作</h3>
+        <p class="muted" data-i18n="contact.body">商务合作请发送邮件至 <a href="mailto:hello@example.com">hello@example.com</a>，或添加微信进行沟通。</p>
+        <div class="mono badge" data-i18n="contact.note">目前处于研发与试点阶段，优先聚焦数据处理与通用建模场景。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="y"></span> <span data-i18n="site.brand">阳港屋科技</span></div>
+      <div class="badge" data-i18n="site.footer">以工程化方式交付可用的智能模型</div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD will be updated by i18n switch -->
+  <script type="application/ld+json" id="org-json"></script>
+
+  <script>
+    const T = {
+      zh: {
+        lang: 'zh-Hans',
+        site: {
+          title: '阳港屋科技 | 数据处理与模型开发',
+          description: '我们是一家专注于数据处理与模型开发的科技公司，提供数据清洗、预测建模与可视化服务。',
+          brand: '阳港屋科技',
+          footer: '以工程化方式交付可用的智能模型'
+        },
+        hero: {
+          kicker: '数据处理 · 模型开发 · 决策优化',
+          title: '把数据变成可执行的决策',
+          subtitle: '我们提供从数据采集与清洗、建模训练到可视化交付的一体化解决方案。',
+          ctaPrimary: '查看服务',
+          ctaSecondary: '联系我们'
+        },
+        svc: {
+          cleaning: { title: '数据清洗与管道', desc: '构建可靠的ETL流程，处理缺失值与异常值，构建高质量数据。', tag: 'Python · SQL · Airflow' },
+          model: { title: '预测建模', desc: '从经典统计到机器学习与深度学习，覆盖回归、分类、时间序列。', tag: 'XGBoost · LSTM · Prophet' },
+          viz: { title: '可视化与报表', desc: '自动化报告，助力业务方快速理解与决策。', tag: 'BI · Dashboards · API' }
+        },
+        about: { title: '关于我们', body: '我们来自统计背景，长期专注于数据工程与智能建模，致力于以工程化与科研化的方法，打造稳定可复用的模型。' },
+        contact: { title: '联系与合作', body: '商务合作请发送邮件至 <a href="mailto:hello@example.com">hello@example.com</a>，或添加微信进行沟通。', note: '目前处于研发与试点阶段，优先聚焦数据处理与通用建模场景。' }
+      },
+      en: {
+        lang: 'en',
+        site: {
+          title: 'Sunport House Technologies | Data Processing & Model Development',
+          description: 'We build data pipelines and machine learning models, delivering cleaning, predictive modeling, and visualization services.',
+          brand: 'Sunport House Technologies',
+          footer: 'Delivering production-ready intelligent models'
+        },
+        hero: {
+          kicker: 'Data statistics · Modeling · Decision Optimization',
+          title: 'Turn data into actionable decisions',
+          subtitle: 'End-to-end solutions from data collection & cleaning, model training to visualization delivery.',
+          ctaPrimary: 'Our Services',
+          ctaSecondary: 'Contact Us'
+        },
+        svc: {
+          cleaning: { title: 'Data Cleaning & Pipelines', desc: 'Reliable ETL pipelines, missing/outlier handling, constructing high-quality data s.', tag: 'Python · SQL · Airflow' },
+          model: { title: 'Predictive Modeling', desc: 'From classical statistics to ML & DL, covering regression, classification, time-series.', tag: 'XGBoost · LSTM · Prophet' },
+          viz: { title: 'Visualization & Reports', desc: 'Automated reporting to accelerate understanding and decisions.', tag: 'BI · Dashboards · API' }
+        },
+        about: { title: 'About Us', body: 'We come from statistics backgrounds. We focus on data engineering and intelligent modeling with a research-driven mindset to build stable and reusable models.' },
+        contact: { title: 'Contact', body: 'For business inquiries, email <a href="mailto:hello@example.com">hello@example.com</a> or reach out via WeChat.', note: 'Currently in R&D and pilot stage, focusing on data processing and general modeling scenarios.' }
+      }
+    };
+
+    function setLang(lang){
+      const dict = T[lang];
+      document.documentElement.lang = dict.lang;
+      // text nodes
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const parts = key.split('.');
+        let val = dict;
+        parts.forEach(p => val = val?.[p]);
+        if(val!==undefined){ el.innerHTML = val; }
+      });
+      // meta/title/og
+      const title = document.querySelector('title[data-i18n="site.title"]');
+      if(title) title.textContent = dict.site.title;
+      document.querySelectorAll('[data-i18n-meta="site.title"]').forEach(m=>m.setAttribute('content', dict.site.title));
+      document.querySelectorAll('[data-i18n-meta="site.description"]').forEach(m=>m.setAttribute('content', dict.site.description));
+      const metaDesc = document.querySelector('meta[name="description"][data-i18n-meta="site.description"]');
+      if(metaDesc) metaDesc.setAttribute('content', dict.site.description);
+      // brand text duplicates
+      document.querySelectorAll('[data-i18n="site.brand"]').forEach(el=>el.textContent=dict.site.brand);
+      // update language button state
+      document.querySelectorAll('.lang button').forEach(btn=>{
+        const active = btn.dataset.lang === lang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active? 'true':'false');
+      });
+      // JSON-LD
+      const org = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": dict.site.brand,
+        "description": dict.site.description,
+        "url": window.location.origin,
+        "logo": window.location.origin + "/og.png"
+      };
+      document.getElementById('org-json').textContent = JSON.stringify(org);
+    }
+
+    // init
+    setLang('zh');
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('btn-zh').addEventListener('click', ()=>setLang('zh'));
+    document.getElementById('btn-en').addEventListener('click', ()=>setLang('en'));
+  </script>
+</body>
+</html>
+
+
